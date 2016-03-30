@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">EL Control</string>
     <string name="action_about">About</string>
+    <string name="title_activity_about">About EL Control</string>
+    <string name="short_description">Control EL Wire with Arduino, IOIO and Android</string>
+    <string name="instructions">To use this application, you must have assembled the hardware.</string>
+    <string name="credit">Created by Joe Bowser</string>
+    <string name="call_to_action">Learn about the Hardware</string>
+    <string name="docs_url">http://infil00p.org/</string>
 </resources>

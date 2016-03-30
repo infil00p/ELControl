@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements IOIOLooperProvide
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        lightEnabled = 0;
+        lightEnabled = -1;
         wireButtons();
     }
 
@@ -114,7 +114,9 @@ public class MainActivity extends AppCompatActivity implements IOIOLooperProvide
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            Intent about = new Intent(MainActivity.this,AboutActivity.class);
+            startActivity(about);
             return true;
         }
 
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements IOIOLooperProvide
             led = ioio_.openDigitalOutput(0, true);
 
             toggleUi(true);
-        }
+        }   
 
         @Override
         public void loop() throws ConnectionLostException, InterruptedException  {
@@ -145,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements IOIOLooperProvide
             // between the last state and the next.
             //out.write();
             Log.d(TAG, "Inside run loop.  Current state: " + Integer.toString(lightEnabled));
-            if(lightEnabled > 0) {
+            if(lightEnabled > -1) {
                 byte buffer[] = new byte[1];
                 buffer[0] = (byte) Character.forDigit(lightEnabled, 10);
 

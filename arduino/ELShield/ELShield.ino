@@ -31,15 +31,17 @@ void loop()
 { 
   if (mySerial.available())
   {
-    int input = mySerial.read();
+    char input[1];
+    input[0] = mySerial.read();
     //This exists for debugging purposes
-    Serial.write(input);
+    Serial.write(input[0]);
     //This is dirty, but it works.
-    int incomingByte = input - '0';
-    int moduls = incomingByte%4;
-    if(incomingByte != lastByte)
+    int incomingByte = atoi(input);
+    //The application can't provide inputs higher than 4
+    //so ignore them
+    if(incomingByte < 4)
     {
-      setEL(moduls);
+      setEL(incomingByte);
     }
   }
   if (Serial.available())

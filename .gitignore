@@ -6,6 +6,7 @@ build
 bin
 assets/.DS_Store
 gradle
+gradlew
 tmp/**
 .metadata
 tmp/**/*

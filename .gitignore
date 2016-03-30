@@ -1,0 +1,22 @@
+.DS_Store
+default.properties
+gen
+local.properties
+build
+bin
+assets/.DS_Store
+gradle
+tmp/**
+.metadata
+tmp/**/*
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.swp
+*.class
+*.jar
+ IntelliJ IDEA files
+*.iml
+.idea
+

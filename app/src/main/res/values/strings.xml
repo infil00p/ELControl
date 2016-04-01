@@ -6,5 +6,6 @@
     <string name="instructions">To use this application, you must have assembled the hardware.</string>
     <string name="credit">Created by Joe Bowser</string>
     <string name="call_to_action">Learn about the Hardware</string>
-    <string name="docs_url">http://infil00p.org/</string>
+    <string name="docs_url">http://infil00p.org/elcontrol</string>
+    <string name="legal">The Android High Voltage robot Icon is derived from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.</string>
 </resources>

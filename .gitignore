@@ -20,4 +20,5 @@ Desktop.ini
  IntelliJ IDEA files
 *.iml
 .idea
-
+*.apk
+.gradle

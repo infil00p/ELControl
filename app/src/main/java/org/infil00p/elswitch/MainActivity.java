@@ -1,5 +1,9 @@
+
+
+
 package org.infil00p.elswitch;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import java.io.IOException;
@@ -139,7 +144,8 @@ public class MainActivity extends AppCompatActivity implements IOIOLooperProvide
             led = ioio_.openDigitalOutput(0, true);
 
             toggleUi(true);
-        }   
+            toast("IOIO Connected");
+        }
 
         @Override
         public void loop() throws ConnectionLostException, InterruptedException  {
@@ -174,8 +180,19 @@ public class MainActivity extends AppCompatActivity implements IOIOLooperProvide
             }
             uart.close();
             toggleUi(false);
+            toast("IOIO disconnected");
         }
 
+    }
+
+    private void toast(final String message) {
+        final Context context = this;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     /*
